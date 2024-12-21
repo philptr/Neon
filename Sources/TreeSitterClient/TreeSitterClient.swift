@@ -10,6 +10,7 @@ public enum TreeSitterClientError: Error {
     case asynchronousExecutionRequired
 }
 
+@MainActor
 public final class TreeSitterClient {
     public typealias TextProvider = SwiftTreeSitter.Predicate.TextProvider
 

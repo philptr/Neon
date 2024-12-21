@@ -1,6 +1,6 @@
 import Foundation
 
-func assumeMainActor<T>(_ body: @MainActor () throws -> T) rethrows -> T {
+func assumeMainActor<T: Sendable>(_ body: @MainActor () throws -> T) rethrows -> T {
 #if swift(>=5.9)
 	if #available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *) {
 		return try MainActor.assumeIsolated(body)
